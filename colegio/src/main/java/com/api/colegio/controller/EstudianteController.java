@@ -27,9 +27,9 @@ public class EstudianteController {
         return this.estudianteService.modifyStudent(estudiante);
     }
 
-    @PostMapping("/{id}")
-    public Boolean deletePersona(@RequestParam Long idEstudiante){
-        return this.estudianteService.deleteStudent(idEstudiante);
+    @PostMapping(value = "/{id}")
+    public Boolean deleteEstudiante(@PathVariable(value = "id") Long id){
+        return this.estudianteService.deleteStudent(id);
     }
 
 }

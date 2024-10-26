@@ -6,7 +6,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
-@RequestMapping("/persona")
+@RequestMapping("/estudiante")
+@CrossOrigin(origins = {"http://localhost:4200", "http://localhost:8084"})
 public class EstudianteController {
 
     @Autowired

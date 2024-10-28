@@ -19,7 +19,7 @@
 						}
 					}
 				},
-				"url": "localhost:8084/api/estudiante/"
+				"url": "localhost:8084/api/estudiante"
 			},
 			"response": []
 		},
@@ -28,7 +28,7 @@
 			"request": {
 				"method": "GET",
 				"header": [],
-				"url": "localhost:8084/api/estudiante/"
+				"url": "localhost:8084/api/estudiante"
 			},
 			"response": []
 		},
@@ -55,7 +55,7 @@
 						}
 					}
 				},
-				"url": "localhost:8084/api/estudiante/"
+				"url": "localhost:8084/api/estudiante"
 			},
 			"response": []
 		},

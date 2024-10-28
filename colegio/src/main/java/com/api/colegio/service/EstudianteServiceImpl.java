@@ -2,6 +2,7 @@ package com.api.colegio.service;
 
 import com.api.colegio.model.Estudiante;
 import com.api.colegio.repository.EstudianteRepository;
+import com.api.colegio.exception.ResourceNotFoundException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -30,7 +31,12 @@ public class EstudianteServiceImpl implements EstudianteService  {
 
     @Override
     public Estudiante findById(Integer id) {
-        return estudianteRepository.findById(id).get();
+        Estudiante estudiante = estudianteRepository.findById(id).orElseThrow(
+                () -> {
+                    throw new ResourceNotFoundException("Estudiante con id " +id+ "no se encuentra");
+        });
+
+        return estudiante;
     }
 
     @Override

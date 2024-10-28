@@ -2,7 +2,7 @@ package com.api.colegio.model;
 
 import jakarta.persistence.*;
 
-import java.util.Date;
+import java.time.LocalDate;
 
 @Entity
 public class Estudiante {
@@ -25,7 +25,7 @@ public class Estudiante {
     private String apellidos;
 
     @Column
-    private Date fechaNacimiento;
+    private LocalDate fechaNacimiento;
 
     @Column
     private int edad;
@@ -85,11 +85,11 @@ public class Estudiante {
         this.apellidos = apellidos;
     }
 
-    public Date getFechaNacimiento() {
+    public LocalDate getFechaNacimiento() {
         return fechaNacimiento;
     }
 
-    public void setFechaNacimiento(Date fechaNacimiento) {
+    public void setFechaNacimiento(LocalDate fechaNacimiento) {
         this.fechaNacimiento = fechaNacimiento;
     }
 

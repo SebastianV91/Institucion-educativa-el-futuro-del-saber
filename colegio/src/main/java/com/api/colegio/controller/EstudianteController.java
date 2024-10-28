@@ -2,35 +2,43 @@ package com.api.colegio.controller;
 
 import com.api.colegio.model.Estudiante;
 import com.api.colegio.service.EstudianteService;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
+
 @RestController
-@RequestMapping("/estudiante")
-@CrossOrigin(origins = {"http://localhost:4200", "http://localhost:8084"})
+@RequestMapping("/api/estudiante/")
 public class EstudianteController {
 
-    @Autowired
-    private EstudianteService estudianteService;
+    private final EstudianteService estudianteService;
 
-    @PostMapping("/nuevo")
-    public Estudiante newEstudiante(@RequestBody Estudiante newEstudiante){
-        return this.estudianteService.newStudent(newEstudiante);
+    public EstudianteController(EstudianteService estudianteService) {
+        this.estudianteService = estudianteService;
     }
 
-    @GetMapping("/mostrar")
-    public Iterable<Estudiante> getAllStudents(){
-        return estudianteService.getAllStudents();
+    @PostMapping
+    public Estudiante save(@RequestBody Estudiante estudiante){
+        return estudianteService.save(estudiante);
     }
 
-    @PostMapping("/update")
-    public Estudiante updateStudent(@RequestBody Estudiante estudiante) {
-        return this.estudianteService.modifyStudent(estudiante);
+    @GetMapping
+    public List<Estudiante> findAll(){
+        return estudianteService.findAll();
     }
 
-    @PostMapping(value = "/{id}")
-    public Boolean deleteEstudiante(@PathVariable(value = "id") Long id){
-        return this.estudianteService.deleteStudent(id);
+    @GetMapping("/{id}")
+    public Estudiante findById(@PathVariable Integer id){
+        return estudianteService.findById(id);
+    }
+
+    @DeleteMapping("/{id}")
+    public void deleteById(@PathVariable Integer id){
+        estudianteService.deleteById(id);
+    }
+
+    @PutMapping
+    public Estudiante updateStudent(@RequestBody Estudiante estudiante){
+        return estudianteService.update(estudiante);
     }
 
 }

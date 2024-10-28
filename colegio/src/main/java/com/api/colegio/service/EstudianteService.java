@@ -2,14 +2,18 @@ package com.api.colegio.service;
 
 import com.api.colegio.model.Estudiante;
 
+import java.util.List;
+
 public interface EstudianteService {
 
-    Estudiante newStudent(Estudiante newStudent);
+    Estudiante save(Estudiante estudiante);
 
-    Iterable<Estudiante> getAllStudents();
+    List<Estudiante> findAll();
 
-    Estudiante modifyStudent(Estudiante estudiante);
+    Estudiante findById(Integer id);
 
-    Boolean deleteStudent(Long idEstudiante);
+    Estudiante update(Estudiante estudiante);
+
+    void deleteById(Integer id);
 
 }

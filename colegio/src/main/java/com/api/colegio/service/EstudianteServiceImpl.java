@@ -5,26 +5,36 @@ import com.api.colegio.repository.EstudianteRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
 import java.util.Optional;
 
 @Service
-public class EstudianteServiceImpl implements EstudianteService {
+public class EstudianteServiceImpl implements EstudianteService  {
 
     @Autowired
     private EstudianteRepository estudianteRepository;
 
-    @Override
-    public Estudiante newStudent(Estudiante newStudent) {
-        return estudianteRepository.save(newStudent);
+    public EstudianteServiceImpl(EstudianteRepository estudianteRepository) {
+        this.estudianteRepository = estudianteRepository;
     }
 
     @Override
-    public Iterable<Estudiante> getAllStudents() {
-        return this.estudianteRepository.findAll();
+    public Estudiante save(Estudiante estudiante) {
+        return estudianteRepository.save(estudiante);
     }
 
     @Override
-    public Estudiante modifyStudent(Estudiante estudiante) {
+    public List<Estudiante> findAll() {
+        return estudianteRepository.findAll();
+    }
+
+    @Override
+    public Estudiante findById(Integer id) {
+        return estudianteRepository.findById(id).get();
+    }
+
+    @Override
+    public Estudiante update(Estudiante estudiante) {
         Optional<Estudiante> estudianteEncontrado = this.estudianteRepository.findById(estudiante.getId());
         if(estudianteEncontrado.get() != null){
             estudianteEncontrado.get().setTipoDocumento(estudiante.getTipoDocumento());
@@ -37,15 +47,14 @@ public class EstudianteServiceImpl implements EstudianteService {
             estudianteEncontrado.get().setEmail(estudiante.getEmail());
             estudianteEncontrado.get().setTelefonoFijo(estudiante.getTelefonoFijo());
             estudianteEncontrado.get().setCelular(estudiante.getCelular());
-            return this.newStudent(estudianteEncontrado.get());
+            return this.save(estudianteEncontrado.get());
         }
         return null;
     }
 
     @Override
-    public Boolean deleteStudent(Long idEstudiante) {
-        this.estudianteRepository.deleteById(idEstudiante);
-        return true;
+    public void deleteById(Integer id) {
+        estudianteRepository.deleteById(id);
     }
 
 }

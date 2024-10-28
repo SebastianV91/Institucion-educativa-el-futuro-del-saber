@@ -19,7 +19,7 @@
 						}
 					}
 				},
-				"url": "localhost:8084/persona/nuevo"
+				"url": "localhost:8084/api/estudiante/"
 			},
 			"response": []
 		},
@@ -28,34 +28,43 @@
 			"request": {
 				"method": "GET",
 				"header": [],
-				"url": "localhost:8084/persona/mostrar"
+				"url": "localhost:8084/api/estudiante/"
 			},
 			"response": []
 		},
 		{
 			"name": "Eliminar estudiante",
 			"request": {
-				"method": "POST",
+				"method": "DELETE",
 				"header": [],
-				"url": "localhost:8084/persona/1"
+				"url": "localhost:8084/api/estudiante/1"
 			},
 			"response": []
 		},
 		{
 			"name": "Modificar Estudiante",
 			"request": {
-				"method": "POST",
+				"method": "PUT",
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\r\n    \"id\":2,\r\n    \"tipoDocumento\": \"CC\",\r\n    \"numeroIdentidad\": \"7654321\",\r\n    \"nombres\": \"Luis\",\r\n    \"apellidos\": \"Perez\",\r\n    \"fechaNacimiento\": \"2008-03-15\",\r\n    \"edad\": 13,\r\n    \"grado\": 9,\r\n    \"email\": \"luis@mail.com\",\r\n    \"telefonoFijo\": \"7152922\",\r\n    \"celular\": \"3112879421\"\r\n}",
+					"raw": "{\r\n    \"id\":1,\r\n    \"tipoDocumento\": \"CC\",\r\n    \"numeroIdentidad\": \"7654321\",\r\n    \"nombres\": \"Luis\",\r\n    \"apellidos\": \"Perez\",\r\n    \"fechaNacimiento\": \"2008-03-15\",\r\n    \"edad\": 13,\r\n    \"grado\": 9,\r\n    \"email\": \"luis@mail.com\",\r\n    \"telefonoFijo\": \"7152922\",\r\n    \"celular\": \"3112879421\"\r\n}",
 					"options": {
 						"raw": {
 							"language": "json"
 						}
 					}
 				},
-				"url": "localhost:8084/persona/update"
+				"url": "localhost:8084/api/estudiante/"
+			},
+			"response": []
+		},
+		{
+			"name": "Buscar estudiante por id",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": "localhost:8084/api/estudiante/1"
 			},
 			"response": []
 		}

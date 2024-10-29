@@ -16,4 +16,8 @@ export class EstudianteService {
     return this.http.get<Estudiante[]>(this.api)
   }
 
+  createStudent(estudiante : Estudiante):Observable<Estudiante>{
+    return this.http.post<Estudiante>(this.api, estudiante);
+  }
+
 }

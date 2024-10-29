@@ -1,0 +1,55 @@
+<h2>CREAR ESTUDIANTE</h2>
+
+<div class="container">
+
+<form>
+    <div class="mb-3">
+      <label for="tipoDocumento" class="form-label">Tipo de documento:</label>
+      <select [(ngModel)]="tipoDocumento" class="form-select" aria-label="Default select example" name="tipoDocumento" >
+        <option selected>Selecciona un tipo de documento</option>
+        <option value="TI">TI</option>
+        <option value="CC">CC</option>
+        <option value="CE">CE</option>
+      </select>
+    </div>
+    <div class="mb-3">
+        <label for="numeroIdentidad" class="form-label">Numero de identidad:</label>
+        <input [(ngModel)]="numeroIdentidad" type="text" class="form-control" id="numeroIdentidad" name="numeroIdentidad" >
+      </div>
+      <div class="mb-3">
+        <label for="nombres" class="form-label">Nombres:</label>
+        <input [(ngModel)]="nombres" type="text" class="form-control" id="nombres" name="nombres" >
+      </div>
+      <div class="mb-3">
+        <label for="apellidos" class="form-label">Apellidos:</label>
+        <input [(ngModel)]="apellidos" type="text" class="form-control" id="apellidos" name="apellidos" >
+      </div>
+      <div class="mb-3">
+        <label for="fechaNacimiento" class="form-label">Fecha de nacimiento:</label>
+        <input [(ngModel)]="fechaNacimiento" type="date" class="form-control" id="fechaNacimiento" name="fechaNacimiento" >
+      </div>
+      <div class="mb-3">
+        <label for="edad" class="form-label">Edad:</label>
+        <input [(ngModel)]="edad" type="text" class="form-control" id="edad" name="edad" >
+      </div>
+      <div class="mb-3">
+        <label for="grado" class="form-label">Grado:</label>
+        <input [(ngModel)]="grado" type="text" class="form-control" id="grado" name="grado" >
+      </div>
+      <div class="mb-3">
+        <label for="email" class="form-label">Email:</label>
+        <input [(ngModel)]="email" type="email" class="form-control" id="email" name="email" >
+      </div>
+      <div class="mb-3">
+        <label for="telefonoFijo" class="form-label">Telefono fijo:</label>
+        <input [(ngModel)]="telefonoFijo" type="text" class="form-control" id="telefonoFijo" name="telefonoFijo" >
+      </div>
+      <div class="mb-3">
+        <label for="celular" class="form-label">Celular:</label>
+        <input [(ngModel)]="celular" type="text" class="form-control" id="celular" name="celular" >
+      </div>
+
+    <button type="submit" class="btn btn-primary" (click)="addStudent()" >Crear</button>
+  </form>
+
+</div>

@@ -1,17 +1,15 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { HttpClientModule } from '@angular/common/http';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { HeaderComponent } from './components/header/header.component';
-import { BodyComponent } from './components/body/body.component';
+import { HttpClientModule } from '@angular/common/http';
+import { EstudianteListComponent } from './components/estudiante-list/estudiante-list.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    HeaderComponent,
-    BodyComponent
+    EstudianteListComponent
   ],
   imports: [
     BrowserModule,
@@ -19,6 +17,6 @@ import { BodyComponent } from './components/body/body.component';
     HttpClientModule
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [EstudianteListComponent]
 })
 export class AppModule { }

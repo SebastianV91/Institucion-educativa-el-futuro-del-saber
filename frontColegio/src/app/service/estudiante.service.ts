@@ -1,36 +1,19 @@
+import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import {HttpClient} from '@angular/common/http'
-import { Estudiante } from '../model/Estudiante';
+import { Estudiante } from '../estudiante';
+import { Observable } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
 })
 export class EstudianteService {
 
-  rutaGlobal = 'http://localhost:8084/estudiante/'
+  private api : string = 'http://localhost:8084/api/estudiante';
 
-  constructor(private http: HttpClient) { }
+  constructor(private http:HttpClient) { }
 
-  crearEstudiantes(estudiante: Estudiante){
-    return this.http.post<Estudiante>(this.rutaGlobal + 'nuevo', estudiante, {
-      observe: 'response'
-    })
-  }
-
-  getEstudiantes(){
-    return this.http.get<Estudiante[]>(this.rutaGlobal + 'mostrar')
-  }
-
-  actualizarEstudiante(estudiante: Estudiante){
-    return this.http.post<Estudiante>(this.rutaGlobal + 'update', estudiante, {
-      observe: 'response'
-    })
-  }
-
-  eliminarEstudiante(id: number){
-    this.http.post<Boolean>(this.rutaGlobal + id, {
-      observe: 'response'
-    }) 
+  getStudentList():Observable<Estudiante []>{
+    return this.http.get<Estudiante[]>(this.api)
   }
 
 }

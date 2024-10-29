@@ -45,6 +45,20 @@ public class Estudiante {
     public Estudiante() {
     }
 
+    public Estudiante(Integer id, String tipoDocumento, String numeroIdentidad, String nombres, String apellidos, LocalDate fechaNacimiento, int edad, int grado, String email, String celular, String telefonoFijo) {
+        this.id = id;
+        this.tipoDocumento = tipoDocumento;
+        this.numeroIdentidad = numeroIdentidad;
+        this.nombres = nombres;
+        this.apellidos = apellidos;
+        this.fechaNacimiento = fechaNacimiento;
+        this.edad = edad;
+        this.grado = grado;
+        this.email = email;
+        this.celular = celular;
+        this.telefonoFijo = telefonoFijo;
+    }
+
     public Integer getId() {
         return id;
     }

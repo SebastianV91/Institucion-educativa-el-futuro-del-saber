@@ -20,4 +20,8 @@ export class EstudianteService {
     return this.http.post<Estudiante>(this.api, estudiante);
   }
 
+  deleteStudentById(id : number):Observable<any>{
+    return this.http.delete(this.api+'/'+id);
+  }
+
 }

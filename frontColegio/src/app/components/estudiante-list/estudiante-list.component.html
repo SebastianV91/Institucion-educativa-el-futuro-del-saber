@@ -1,5 +1,7 @@
-<h2>LISTADO DE ESTUDIANTES</h2>
+<div class="container">
 
+<h2>LISTADO DE ESTUDIANTES</h2>
+<a class="btn btn-primary" routerLink="/estudiantes/add" >Crear Estudiante</a>
 <table class="table">
     <thead>
       <tr>
@@ -29,6 +31,8 @@
         <td>{{e.email}}</td>
         <td>{{e.telefonoFijo}}</td>
         <td>{{e.celular}}</td>
+        <td> <button class="btn btn-danger" (click)="deleteStudent(e.id)" >ELIMINAR</button> </td>
       </tr>
     </tbody>
   </table>
+</div>

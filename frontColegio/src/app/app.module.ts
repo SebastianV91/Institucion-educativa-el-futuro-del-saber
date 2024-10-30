@@ -7,6 +7,12 @@ import { HttpClientModule } from '@angular/common/http';
 import { EstudianteListComponent } from './components/estudiante-list/estudiante-list.component';
 import { EstudianteAddComponent } from './components/estudiante-add/estudiante-add.component';
 import { FormsModule } from '@angular/forms';
+import { RouterModule, Routes } from '@angular/router';
+
+const routes : Routes = [
+  {path:'', component:EstudianteListComponent},
+  {path:'estudiantes/add', component:EstudianteAddComponent }
+];
 
 @NgModule({
   declarations: [
@@ -18,9 +24,10 @@ import { FormsModule } from '@angular/forms';
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    FormsModule
+    FormsModule,
+    RouterModule.forRoot(routes)
   ],
   providers: [],
-  bootstrap: [EstudianteAddComponent]
+  bootstrap: [AppComponent]
 })
 export class AppModule { }

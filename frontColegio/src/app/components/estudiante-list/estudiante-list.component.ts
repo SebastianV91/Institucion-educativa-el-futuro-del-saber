@@ -21,11 +21,15 @@ export class EstudianteListComponent implements OnInit {
     this.estudianteService.getStudentList().subscribe(
       data => {
         this.estudiantes = data;
-        console.log(this.estudiantes);
       }
     );
   }
 
-
+  deleteStudent(id : number){
+    console.log(id);
+    this.estudianteService.deleteStudentById(id).subscribe(
+      ()=> this.listStudents()
+    );
+  }
 
 }
